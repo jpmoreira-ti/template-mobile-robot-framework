@@ -2,6 +2,10 @@
 Library           AppiumLibrary
 
 
+*** Variables ***
+${QAX_BTN_ID}    com.qaxperience.yodapp:id/mi_button_cta
+${QAX_TEXT}    com.qaxperience.yodapp:id/toolbarTitle
+
 *** Test Cases ***
 Click Test
     Open Application	
@@ -13,10 +17,9 @@ Click Test
     ...		appium:autoGrantPermissions=${True}
     ...	    appium:udid=emulator-5554
 
-    Wait Until Page Contains   Yoda    10    error=Could not find Yoda Text
+    Wait Until Page Contains   text=${QAX_BTN_ID}    timeout=10    error=Could not find Yoda Text
+    Click Element  locator=${QAX_BTN_ID}
 
-    Click Element  locator=com.qaxperience.yodapp:id/mi_button_cta
-
-    Wait Until Element Is Visible    locator=com.qaxperience.yodapp:id/toolbarTitle    timeout=10    error=Could not find Clique em Botões
+    Wait Until Element Is Visible    locator=${QAX_TEXT}     timeout=10    error=Could not find Clique em Botões
 
     Close Application
