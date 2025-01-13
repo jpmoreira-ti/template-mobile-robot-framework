@@ -3,7 +3,7 @@ Library           AppiumLibrary
 
 
 *** Test Cases ***
-Sample Test
+Click Test
     Open Application	
     ...	    http://localhost:4723
     ...	    appium:platformName=Android
