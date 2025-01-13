@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.13.0 on darwin)" generated="2025-01-13T11:28:17.900209" rpa="false" schemaversion="5">
-<suite id="s1" name="Tests" source="/Users/jp/Documents/Projects/template-mobile-robot-framework/tests">
-<suite id="s1-s1" name="Home" source="/Users/jp/Documents/Projects/template-mobile-robot-framework/tests/home.robot">
-<test id="s1-s1-t1" name="Symple Test" line="6">
+<robot generator="Robot 7.1.1 (Python 3.13.0 on darwin)" generated="2025-01-13T12:22:24.902448" rpa="false" schemaversion="5">
+<suite id="s1" name="Click" source="/Users/jp/Documents/Projects/template-mobile-robot-framework/tests/click.robot">
+<test id="s1-t1" name="Sample Test" line="6">
 <kw name="Open Application" owner="AppiumLibrary">
 <arg>http://localhost:4723</arg>
 <arg>appium:platformName=Android</arg>
@@ -18,27 +17,38 @@ Please check https://appium.io/docs/en/2.1/cli/args/
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |
 | strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<status status="PASS" start="2025-01-13T11:28:17.986111" elapsed="6.851487"/>
+<status status="PASS" start="2025-01-13T12:22:24.992624" elapsed="4.495044"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="AppiumLibrary">
 <arg>Yoda</arg>
+<arg>10</arg>
+<arg>error=Could not find Yoda Text</arg>
 <doc>Waits until `text` appears on current page.</doc>
-<status status="PASS" start="2025-01-13T11:28:24.839945" elapsed="5.050073"/>
+<status status="PASS" start="2025-01-13T12:22:29.488416" elapsed="5.021239"/>
 </kw>
-<kw name="Wait Until Page Contains" owner="AppiumLibrary">
-<arg>Mobile Training</arg>
-<doc>Waits until `text` appears on current page.</doc>
-<status status="PASS" start="2025-01-13T11:28:29.891640" elapsed="0.021238"/>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-13T12:22:34.512396" level="INFO">Clicking element 'com.qaxperience.yodapp:id/mi_button_cta'.</msg>
+<msg time="2025-01-13T12:22:34.646068" level="INFO">criteria is com.qaxperience.yodapp:id/mi_button_cta</msg>
+<arg>locator=com.qaxperience.yodapp:id/mi_button_cta</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-13T12:22:34.510510" elapsed="0.135678"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-13T12:22:35.785205" level="INFO">criteria is com.qaxperience.yodapp:id/toolbarTitle
+criteria is com.qaxperience.yodapp:id/toolbarTitle</msg>
+<arg>locator=com.qaxperience.yodapp:id/toolbarTitle</arg>
+<arg>timeout=10</arg>
+<arg>error=Could not find Clique em Botões</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-13T12:22:34.646459" elapsed="1.138865"/>
 </kw>
 <kw name="Close Application" owner="AppiumLibrary">
 <doc>Closes the current application and also close webdriver session.</doc>
-<status status="PASS" start="2025-01-13T11:28:29.913117" elapsed="0.246429"/>
+<status status="PASS" start="2025-01-13T12:22:35.785603" elapsed="0.240021"/>
 </kw>
-<status status="PASS" start="2025-01-13T11:28:17.985690" elapsed="12.174287"/>
+<status status="PASS" start="2025-01-13T12:22:24.992215" elapsed="11.033975"/>
 </test>
-<status status="PASS" start="2025-01-13T11:28:17.914523" elapsed="12.246431"/>
-</suite>
-<status status="PASS" start="2025-01-13T11:28:17.900979" elapsed="12.261059"/>
+<status status="PASS" start="2025-01-13T12:22:24.903089" elapsed="11.124203"/>
 </suite>
 <statistics>
 <total>
@@ -47,8 +57,7 @@ Please check https://appium.io/docs/en/2.1/cli/args/
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Home">Tests.Home</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Click">Click</stat>
 </suite>
 </statistics>
 <errors>
