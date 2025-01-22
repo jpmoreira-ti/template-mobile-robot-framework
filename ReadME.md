@@ -20,13 +20,14 @@ This project demonstrates how to perform mobile testing using Appium and Robot F
 
 2. Create and activate a virtual environment:
     ```sh
-    python -m venv mobile-template
-    source mobile-template/bin/activate  # On Windows use `mobile-template\Scripts\activate`
+    python3 -m venv mobile-template-env
+    source mobile-template-env/bin/activate  # On Windows use `mobile-template\Scripts\activate`
     ```
 
 3. Install the required dependencies:
     ```sh
     pip install -r requirements.txt
+    pip install --upgrade pip
     ```
 
 ## Running Tests

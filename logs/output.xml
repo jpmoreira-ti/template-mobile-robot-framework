@@ -1,0 +1,809 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.0 on darwin)" generated="2025-01-22T20:01:05.178222" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="/Users/jp/Documents/Projects/template-mobile-robot-framework/tests">
+<suite id="s1-s1" name="Checkbox" source="/Users/jp/Documents/Projects/template-mobile-robot-framework/tests/checkbox.robot">
+<test id="s1-s1-t1" name="Should be able to click on checkbox option" line="8">
+<kw name="Start Session" owner="base">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://localhost:4723</arg>
+<arg>appium:platformName=Android</arg>
+<arg>appium:automationName=UiAutomator2</arg>
+<arg>deviceName='emulator-5554'</arg>
+<arg>appium:app=${EXECDIR}/app/yodapp.apk</arg>
+<arg>appium:autoGrantPermissions=${True}</arg>
+<arg>appium:udid=emulator-5554</arg>
+<arg>packageName=com.qaxperience.yodapp</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-01-22T20:01:05.291671" elapsed="8.782550"/>
+</kw>
+<arg>'${PLATFORM}' == 'android'</arg>
+<arg>Open Application</arg>
+<arg>http://localhost:4723</arg>
+<arg>appium:platformName=Android</arg>
+<arg>appium:automationName=UiAutomator2</arg>
+<arg>deviceName='emulator-5554'</arg>
+<arg>appium:app=${EXECDIR}/app/yodapp.apk</arg>
+<arg>appium:autoGrantPermissions=${True}</arg>
+<arg>appium:udid=emulator-5554</arg>
+<arg>packageName=com.qaxperience.yodapp</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-01-22T20:01:05.291548" elapsed="8.783057"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${PLATFORM}' == 'ios'</arg>
+<arg>Open Application</arg>
+<arg>http://localhost:4723</arg>
+<arg>appium:platformName=Android</arg>
+<arg>appium:automationName=UiAutomator2</arg>
+<arg>deviceName='emulator-5554'</arg>
+<arg>appium:app=${EXECDIR}/app/yodapp.apk</arg>
+<arg>appium:autoGrantPermissions=${True}</arg>
+<arg>appium:udid=emulator-5554</arg>
+<arg>packageName=com.qaxperience.yodapp</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-01-22T20:01:14.075264" elapsed="0.000755"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:01:05.291246" elapsed="8.785005"/>
+</kw>
+<kw name="Check title info" owner="actions">
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>text=${QAX_TEXT}</arg>
+<arg>timeout=10</arg>
+<arg>error=Could not find Yoda Text</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2025-01-22T20:01:14.077236" elapsed="5.088881"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:01:14.076875" elapsed="5.090621"/>
+</kw>
+<kw name="Click initial button and check informations" owner="actions">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:19.231267" level="INFO">criteria is mi_button_cta</msg>
+<arg>${qax_btn_id}</arg>
+<arg>timeout=10</arg>
+<arg>error=Could not find ${qax_btn_id} Element</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-22T20:01:19.169375" elapsed="0.061965"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:19.233072" level="INFO">Clicking element 'id=mi_button_cta'.</msg>
+<msg time="2025-01-22T20:01:19.330458" level="INFO">criteria is mi_button_cta</msg>
+<arg>${qax_btn_id}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-22T20:01:19.231449" elapsed="0.099127"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:20.476099" level="INFO">criteria is toolbarTitle
+criteria is toolbarTitle</msg>
+<arg>locator=${qax_title_id}</arg>
+<arg>timeout=10</arg>
+<arg>error=Could not find ${qax_title_id} Element</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-22T20:01:19.330802" elapsed="1.146350"/>
+</kw>
+<kw name="Element Text Should Be" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:20.486394" level="INFO">Verifying element 'id=toolbarTitle' contains exactly text 'Clique em Botões'.</msg>
+<msg time="2025-01-22T20:01:20.518445" level="INFO">criteria is toolbarTitle</msg>
+<arg>${qax_title_id}</arg>
+<arg>${QAX_TEXT_BUTTON}</arg>
+<arg>message=Could not find ${QAX_TEXT_BUTTON} Text</arg>
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<status status="PASS" start="2025-01-22T20:01:20.481062" elapsed="0.037499"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:01:19.168598" elapsed="1.350150"/>
+</kw>
+<kw name=" Click menu button and check informations" owner="actions">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>locator=${left_side_menu_acc_id}</arg>
+<arg>timeout=10</arg>
+<arg>error=Could not find ${left_side_menu_acc_id} element</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-22T20:01:20.519834" elapsed="0.043105"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:20.564134" level="INFO">Clicking element 'accessibility_id=Open navigation drawer'.</msg>
+<arg>${left_side_menu_acc_id}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-22T20:01:20.563068" elapsed="0.078711"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:21.568845" level="INFO">xpath criteria: //*[@resource-id="com.qaxperience.yodapp:id/rvNavigation"]//*[@text="Clique em Botões"]</msg>
+<arg>${click_button_menu_option_xpath}</arg>
+<arg>timeout=10</arg>
+<arg>error=Could not find ${click_button_menu_option_xpath} element</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-22T20:01:20.641990" elapsed="0.926917"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:01:20.519336" elapsed="1.049636"/>
+</kw>
+<kw name=" Check left menu option and check informations" owner="actions">
+<kw name="Click Text" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:22.612834" level="INFO">xpath criteria: //*[contains(@text,"Check e Radio")]</msg>
+<arg>${option_menu}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" start="2025-01-22T20:01:21.569815" elapsed="1.043258"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>text=${type_click}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2025-01-22T20:01:22.613519" elapsed="0.046381"/>
+</kw>
+<kw name="Click Text" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:22.742752" level="INFO">xpath criteria: //*[contains(@text,"Checkbox")]</msg>
+<arg>text=${type_click}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" start="2025-01-22T20:01:22.660292" elapsed="0.082560"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>text=${type_button_text}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2025-01-22T20:01:22.743051" elapsed="1.336400"/>
+</kw>
+<arg>Check e Radio</arg>
+<arg>Checkbox</arg>
+<arg>Checkbox</arg>
+<status status="PASS" start="2025-01-22T20:01:21.569136" elapsed="2.510625"/>
+</kw>
+<kw name=" Click checkbox option" owner="actions">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-01-22T20:01:24.081280" level="INFO">@{techs} = [ Ruby | Python | Java | Javascript | Robot Framework ]</msg>
+<var>@{techs}</var>
+<arg>Ruby</arg>
+<arg>Python</arg>
+<arg>Java</arg>
+<arg>Javascript</arg>
+<arg>Robot Framework</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-01-22T20:01:24.081052" elapsed="0.000250"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:24.083123" level="INFO">Clicking element 'xpath=//android.widget.CheckBox[contains(@text, "Ruby" )]'.</msg>
+<msg time="2025-01-22T20:01:24.207911" level="INFO">xpath criteria: //android.widget.CheckBox[contains(@text, "Ruby" )]</msg>
+<arg>xpath=//android.widget.CheckBox[contains(@text, "${tech}" )]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-22T20:01:24.082099" elapsed="0.125868"/>
+</kw>
+<var name="${tech}">Ruby</var>
+<status status="PASS" start="2025-01-22T20:01:24.082023" elapsed="0.125977"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:24.208818" level="INFO">Clicking element 'xpath=//android.widget.CheckBox[contains(@text, "Python" )]'.</msg>
+<msg time="2025-01-22T20:01:26.035415" level="INFO">xpath criteria: //android.widget.CheckBox[contains(@text, "Python" )]</msg>
+<arg>xpath=//android.widget.CheckBox[contains(@text, "${tech}" )]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-22T20:01:24.208178" elapsed="1.827730"/>
+</kw>
+<var name="${tech}">Python</var>
+<status status="PASS" start="2025-01-22T20:01:24.208115" elapsed="1.828019"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:26.051457" level="INFO">Clicking element 'xpath=//android.widget.CheckBox[contains(@text, "Java" )]'.</msg>
+<msg time="2025-01-22T20:01:26.141732" level="INFO">xpath criteria: //android.widget.CheckBox[contains(@text, "Java" )]</msg>
+<arg>xpath=//android.widget.CheckBox[contains(@text, "${tech}" )]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-22T20:01:26.045703" elapsed="0.096075"/>
+</kw>
+<var name="${tech}">Java</var>
+<status status="PASS" start="2025-01-22T20:01:26.036589" elapsed="0.105221"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:26.142583" level="INFO">Clicking element 'xpath=//android.widget.CheckBox[contains(@text, "Javascript" )]'.</msg>
+<msg time="2025-01-22T20:01:27.109203" level="INFO">xpath criteria: //android.widget.CheckBox[contains(@text, "Javascript" )]</msg>
+<arg>xpath=//android.widget.CheckBox[contains(@text, "${tech}" )]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-22T20:01:26.141941" elapsed="0.967372"/>
+</kw>
+<var name="${tech}">Javascript</var>
+<status status="PASS" start="2025-01-22T20:01:26.141887" elapsed="0.967494"/>
+</iter>
+<iter>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:27.111159" level="INFO">Clicking element 'xpath=//android.widget.CheckBox[contains(@text, "Robot Framework" )]'.</msg>
+<msg time="2025-01-22T20:01:28.955370" level="INFO">xpath criteria: //android.widget.CheckBox[contains(@text, "Robot Framework" )]</msg>
+<arg>xpath=//android.widget.CheckBox[contains(@text, "${tech}" )]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-22T20:01:27.109680" elapsed="1.845828"/>
+</kw>
+<var name="${tech}">Robot Framework</var>
+<status status="PASS" start="2025-01-22T20:01:27.109548" elapsed="1.846047"/>
+</iter>
+<var>${tech}</var>
+<value>@{techs}</value>
+<status status="PASS" start="2025-01-22T20:01:24.081889" elapsed="4.873769"/>
+</for>
+<status status="PASS" start="2025-01-22T20:01:24.080661" elapsed="4.875182"/>
+</kw>
+<kw name="Close Session" owner="base">
+<kw name="Close Application" owner="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2025-01-22T20:01:28.956658" elapsed="0.359650"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:01:28.956258" elapsed="0.360334"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:01:05.290942" elapsed="24.026074"/>
+</test>
+<status status="PASS" start="2025-01-22T20:01:05.194889" elapsed="24.123499"/>
+</suite>
+<suite id="s1-s2" name="Click" source="/Users/jp/Documents/Projects/template-mobile-robot-framework/tests/click.robot">
+<test id="s1-s2-t1" name="Should be able to execute a simple click" line="8">
+<kw name="Start Session" owner="base">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://localhost:4723</arg>
+<arg>appium:platformName=Android</arg>
+<arg>appium:automationName=UiAutomator2</arg>
+<arg>deviceName='emulator-5554'</arg>
+<arg>appium:app=${EXECDIR}/app/yodapp.apk</arg>
+<arg>appium:autoGrantPermissions=${True}</arg>
+<arg>appium:udid=emulator-5554</arg>
+<arg>packageName=com.qaxperience.yodapp</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-01-22T20:01:29.327810" elapsed="6.241215"/>
+</kw>
+<arg>'${PLATFORM}' == 'android'</arg>
+<arg>Open Application</arg>
+<arg>http://localhost:4723</arg>
+<arg>appium:platformName=Android</arg>
+<arg>appium:automationName=UiAutomator2</arg>
+<arg>deviceName='emulator-5554'</arg>
+<arg>appium:app=${EXECDIR}/app/yodapp.apk</arg>
+<arg>appium:autoGrantPermissions=${True}</arg>
+<arg>appium:udid=emulator-5554</arg>
+<arg>packageName=com.qaxperience.yodapp</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-01-22T20:01:29.326740" elapsed="6.242713"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${PLATFORM}' == 'ios'</arg>
+<arg>Open Application</arg>
+<arg>http://localhost:4723</arg>
+<arg>appium:platformName=Android</arg>
+<arg>appium:automationName=UiAutomator2</arg>
+<arg>deviceName='emulator-5554'</arg>
+<arg>appium:app=${EXECDIR}/app/yodapp.apk</arg>
+<arg>appium:autoGrantPermissions=${True}</arg>
+<arg>appium:udid=emulator-5554</arg>
+<arg>packageName=com.qaxperience.yodapp</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-01-22T20:01:35.570181" elapsed="0.000545"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:01:29.325460" elapsed="6.245370"/>
+</kw>
+<kw name="Check title info" owner="actions">
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>text=${QAX_TEXT}</arg>
+<arg>timeout=10</arg>
+<arg>error=Could not find Yoda Text</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2025-01-22T20:01:35.571322" elapsed="5.016285"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:01:35.571129" elapsed="5.017567"/>
+</kw>
+<kw name="Click initial button and check informations" owner="actions">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:40.649222" level="INFO">criteria is mi_button_cta</msg>
+<arg>${qax_btn_id}</arg>
+<arg>timeout=10</arg>
+<arg>error=Could not find ${qax_btn_id} Element</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-22T20:01:40.590704" elapsed="0.058580"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:40.653093" level="INFO">Clicking element 'id=mi_button_cta'.</msg>
+<msg time="2025-01-22T20:01:40.726539" level="INFO">criteria is mi_button_cta</msg>
+<arg>${qax_btn_id}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-22T20:01:40.649961" elapsed="0.076693"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:41.877258" level="INFO">criteria is toolbarTitle
+criteria is toolbarTitle</msg>
+<arg>locator=${qax_title_id}</arg>
+<arg>timeout=10</arg>
+<arg>error=Could not find ${qax_title_id} Element</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-22T20:01:40.726849" elapsed="1.150511"/>
+</kw>
+<kw name="Element Text Should Be" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:41.879865" level="INFO">Verifying element 'id=toolbarTitle' contains exactly text 'Clique em Botões'.</msg>
+<msg time="2025-01-22T20:01:41.910121" level="INFO">criteria is toolbarTitle</msg>
+<arg>${qax_title_id}</arg>
+<arg>${QAX_TEXT_BUTTON}</arg>
+<arg>message=Could not find ${QAX_TEXT_BUTTON} Text</arg>
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<status status="PASS" start="2025-01-22T20:01:41.877562" elapsed="0.032664"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:01:40.589885" elapsed="1.320450"/>
+</kw>
+<kw name=" Click menu button and check informations" owner="actions">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>locator=${left_side_menu_acc_id}</arg>
+<arg>timeout=10</arg>
+<arg>error=Could not find ${left_side_menu_acc_id} element</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-22T20:01:41.911049" elapsed="0.038853"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:41.951784" level="INFO">Clicking element 'accessibility_id=Open navigation drawer'.</msg>
+<arg>${left_side_menu_acc_id}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-22T20:01:41.950146" elapsed="0.059194"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:42.919206" level="INFO">xpath criteria: //*[@resource-id="com.qaxperience.yodapp:id/rvNavigation"]//*[@text="Clique em Botões"]</msg>
+<arg>${click_button_menu_option_xpath}</arg>
+<arg>timeout=10</arg>
+<arg>error=Could not find ${click_button_menu_option_xpath} element</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-22T20:01:42.011646" elapsed="0.907684"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:01:41.910709" elapsed="1.008852"/>
+</kw>
+<kw name=" Check left menu option and check informations" owner="actions">
+<kw name="Click Text" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:43.011436" level="INFO">xpath criteria: //*[contains(@text,"Clique em Botões")]</msg>
+<arg>${option_menu}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" start="2025-01-22T20:01:42.920652" elapsed="0.090902"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>text=${type_click}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2025-01-22T20:01:43.012107" elapsed="0.946272"/>
+</kw>
+<kw name="Click Text" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:44.051264" level="INFO">xpath criteria: //*[contains(@text,"Clique simples")]</msg>
+<arg>text=${type_click}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" start="2025-01-22T20:01:43.958797" elapsed="0.092617"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>text=${type_button_text}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2025-01-22T20:01:44.051615" elapsed="1.337160"/>
+</kw>
+<arg>Clique em Botões</arg>
+<arg>Clique simples</arg>
+<arg>Botão clique simples</arg>
+<status status="PASS" start="2025-01-22T20:01:42.920147" elapsed="2.469073"/>
+</kw>
+<kw name=" Click short button and check text" owner="actions">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:45.423634" level="INFO">criteria is short_click</msg>
+<arg>${short_click_button_id}</arg>
+<arg>timeout=10</arg>
+<arg>error=Could not find ${short_click_button_id} element</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-22T20:01:45.390462" elapsed="0.033218"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:45.424640" level="INFO">Clicking element 'id=short_click'.</msg>
+<msg time="2025-01-22T20:01:46.023720" level="INFO">criteria is short_click</msg>
+<arg>${short_click_button_id}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-22T20:01:45.423775" elapsed="0.600112"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${short_click_button_text}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2025-01-22T20:01:46.024262" elapsed="0.015072"/>
+</kw>
+<arg>Isso é um clique simples</arg>
+<status status="PASS" start="2025-01-22T20:01:45.389782" elapsed="0.649715"/>
+</kw>
+<kw name="Close Session" owner="base">
+<kw name="Close Application" owner="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2025-01-22T20:01:46.040576" elapsed="0.206003"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:01:46.040082" elapsed="0.206626"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:01:29.324912" elapsed="16.922300"/>
+</test>
+<test id="s1-s2-t2" name="Should be able to execute a long click" line="17">
+<kw name="Start Session" owner="base">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://localhost:4723</arg>
+<arg>appium:platformName=Android</arg>
+<arg>appium:automationName=UiAutomator2</arg>
+<arg>deviceName='emulator-5554'</arg>
+<arg>appium:app=${EXECDIR}/app/yodapp.apk</arg>
+<arg>appium:autoGrantPermissions=${True}</arg>
+<arg>appium:udid=emulator-5554</arg>
+<arg>packageName=com.qaxperience.yodapp</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-01-22T20:01:46.249276" elapsed="4.567742"/>
+</kw>
+<arg>'${PLATFORM}' == 'android'</arg>
+<arg>Open Application</arg>
+<arg>http://localhost:4723</arg>
+<arg>appium:platformName=Android</arg>
+<arg>appium:automationName=UiAutomator2</arg>
+<arg>deviceName='emulator-5554'</arg>
+<arg>appium:app=${EXECDIR}/app/yodapp.apk</arg>
+<arg>appium:autoGrantPermissions=${True}</arg>
+<arg>appium:udid=emulator-5554</arg>
+<arg>packageName=com.qaxperience.yodapp</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-01-22T20:01:46.248843" elapsed="4.568749"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${PLATFORM}' == 'ios'</arg>
+<arg>Open Application</arg>
+<arg>http://localhost:4723</arg>
+<arg>appium:platformName=Android</arg>
+<arg>appium:automationName=UiAutomator2</arg>
+<arg>deviceName='emulator-5554'</arg>
+<arg>appium:app=${EXECDIR}/app/yodapp.apk</arg>
+<arg>appium:autoGrantPermissions=${True}</arg>
+<arg>appium:udid=emulator-5554</arg>
+<arg>packageName=com.qaxperience.yodapp</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-01-22T20:01:50.818407" elapsed="0.000385"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:01:46.248464" elapsed="4.570429"/>
+</kw>
+<kw name="Check title info" owner="actions">
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>text=${QAX_TEXT}</arg>
+<arg>timeout=10</arg>
+<arg>error=Could not find Yoda Text</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2025-01-22T20:01:50.819420" elapsed="5.036732"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:01:50.819178" elapsed="5.039070"/>
+</kw>
+<kw name="Click initial button and check informations" owner="actions">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:55.944465" level="INFO">criteria is mi_button_cta</msg>
+<arg>${qax_btn_id}</arg>
+<arg>timeout=10</arg>
+<arg>error=Could not find ${qax_btn_id} Element</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-22T20:01:55.868509" elapsed="0.076004"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:55.946101" level="INFO">Clicking element 'id=mi_button_cta'.</msg>
+<msg time="2025-01-22T20:01:56.131984" level="INFO">criteria is mi_button_cta</msg>
+<arg>${qax_btn_id}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-22T20:01:55.944622" elapsed="0.187475"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:57.283039" level="INFO">criteria is toolbarTitle
+criteria is toolbarTitle</msg>
+<arg>locator=${qax_title_id}</arg>
+<arg>timeout=10</arg>
+<arg>error=Could not find ${qax_title_id} Element</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-22T20:01:56.132303" elapsed="1.153030"/>
+</kw>
+<kw name="Element Text Should Be" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:57.288453" level="INFO">Verifying element 'id=toolbarTitle' contains exactly text 'Clique em Botões'.</msg>
+<msg time="2025-01-22T20:01:57.311050" level="INFO">criteria is toolbarTitle</msg>
+<arg>${qax_title_id}</arg>
+<arg>${QAX_TEXT_BUTTON}</arg>
+<arg>message=Could not find ${QAX_TEXT_BUTTON} Text</arg>
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<status status="PASS" start="2025-01-22T20:01:57.287161" elapsed="0.023990"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:01:55.865825" elapsed="1.445504"/>
+</kw>
+<kw name=" Click menu button and check informations" owner="actions">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>locator=${left_side_menu_acc_id}</arg>
+<arg>timeout=10</arg>
+<arg>error=Could not find ${left_side_menu_acc_id} element</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-22T20:01:57.312209" elapsed="0.021835"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:57.334727" level="INFO">Clicking element 'accessibility_id=Open navigation drawer'.</msg>
+<arg>${left_side_menu_acc_id}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-22T20:01:57.334135" elapsed="0.072123"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:58.322047" level="INFO">xpath criteria: //*[@resource-id="com.qaxperience.yodapp:id/rvNavigation"]//*[@text="Clique em Botões"]</msg>
+<arg>${click_button_menu_option_xpath}</arg>
+<arg>timeout=10</arg>
+<arg>error=Could not find ${click_button_menu_option_xpath} element</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-22T20:01:57.406611" elapsed="0.915488"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:01:57.311836" elapsed="1.010317"/>
+</kw>
+<kw name=" Check left menu option and check informations" owner="actions">
+<kw name="Click Text" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:58.429101" level="INFO">xpath criteria: //*[contains(@text,"Clique em Botões")]</msg>
+<arg>${option_menu}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" start="2025-01-22T20:01:58.322526" elapsed="0.106669"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>text=${type_click}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2025-01-22T20:01:58.429388" elapsed="0.937600"/>
+</kw>
+<kw name="Click Text" owner="AppiumLibrary">
+<msg time="2025-01-22T20:01:59.443121" level="INFO">xpath criteria: //*[contains(@text,"Clique longo")]</msg>
+<arg>text=${type_click}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" start="2025-01-22T20:01:59.367401" elapsed="0.075818"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>text=${type_button_text}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2025-01-22T20:01:59.443395" elapsed="1.261001"/>
+</kw>
+<arg>Clique em Botões</arg>
+<arg>Clique longo</arg>
+<arg>Botão clique longo</arg>
+<status status="PASS" start="2025-01-22T20:01:58.322298" elapsed="2.382734"/>
+</kw>
+<kw name=" Click long button and check text" owner="actions">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-22T20:02:01.300149" level="INFO">criteria is long_click</msg>
+<arg>${long_click_button_id}</arg>
+<arg>timeout=10</arg>
+<arg>error=Could not find ${long_click_button_id} element</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-22T20:02:00.706456" elapsed="0.593795"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-01-22T20:02:01.301612" level="INFO">@{positions} = [ 542 | 1220 ]</msg>
+<var>@{positions}</var>
+<arg>${542}</arg>
+<arg>${1220}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-01-22T20:02:01.300478" elapsed="0.001172"/>
+</kw>
+<kw name="Tap With Positions" owner="AppiumLibrary">
+<arg>1000</arg>
+<arg>${positions}</arg>
+<doc>Taps on a particular place with up to five fingers, holding for a
+certain time</doc>
+<status status="PASS" start="2025-01-22T20:02:01.301831" elapsed="1.306524"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${long_click_button_text}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2025-01-22T20:02:02.608532" elapsed="0.027129"/>
+</kw>
+<arg>Isso é um clique longo</arg>
+<status status="PASS" start="2025-01-22T20:02:00.705948" elapsed="1.929835"/>
+</kw>
+<kw name="Close Session" owner="base">
+<kw name="Close Application" owner="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2025-01-22T20:02:02.636420" elapsed="0.208987"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:02:02.636082" elapsed="0.209560"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:01:46.247806" elapsed="16.598155"/>
+</test>
+<status status="PASS" start="2025-01-22T20:01:29.319112" elapsed="33.528066"/>
+</suite>
+<suite id="s1-s3" name="Rabiobutton" source="/Users/jp/Documents/Projects/template-mobile-robot-framework/tests/rabiobutton.robot">
+<test id="s1-s3-t1" name="Should be able to click on radio button option" line="9">
+<kw name="Start Session" owner="base">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://localhost:4723</arg>
+<arg>appium:platformName=Android</arg>
+<arg>appium:automationName=UiAutomator2</arg>
+<arg>deviceName='emulator-5554'</arg>
+<arg>appium:app=${EXECDIR}/app/yodapp.apk</arg>
+<arg>appium:autoGrantPermissions=${True}</arg>
+<arg>appium:udid=emulator-5554</arg>
+<arg>packageName=com.qaxperience.yodapp</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-01-22T20:02:02.858632" elapsed="4.475162"/>
+</kw>
+<arg>'${PLATFORM}' == 'android'</arg>
+<arg>Open Application</arg>
+<arg>http://localhost:4723</arg>
+<arg>appium:platformName=Android</arg>
+<arg>appium:automationName=UiAutomator2</arg>
+<arg>deviceName='emulator-5554'</arg>
+<arg>appium:app=${EXECDIR}/app/yodapp.apk</arg>
+<arg>appium:autoGrantPermissions=${True}</arg>
+<arg>appium:udid=emulator-5554</arg>
+<arg>packageName=com.qaxperience.yodapp</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-01-22T20:02:02.858220" elapsed="4.476087"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${PLATFORM}' == 'ios'</arg>
+<arg>Open Application</arg>
+<arg>http://localhost:4723</arg>
+<arg>appium:platformName=Android</arg>
+<arg>appium:automationName=UiAutomator2</arg>
+<arg>deviceName='emulator-5554'</arg>
+<arg>appium:app=${EXECDIR}/app/yodapp.apk</arg>
+<arg>appium:autoGrantPermissions=${True}</arg>
+<arg>appium:udid=emulator-5554</arg>
+<arg>packageName=com.qaxperience.yodapp</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-01-22T20:02:07.334931" elapsed="0.000380"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:02:02.857817" elapsed="4.477968"/>
+</kw>
+<kw name="Check title info" owner="actions">
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>text=${QAX_TEXT}</arg>
+<arg>timeout=10</arg>
+<arg>error=Could not find Yoda Text</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2025-01-22T20:02:07.336650" elapsed="5.066591"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:02:07.336393" elapsed="5.067601"/>
+</kw>
+<kw name="Click initial button and check informations" owner="actions">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-22T20:02:12.497374" level="INFO">criteria is mi_button_cta</msg>
+<arg>${qax_btn_id}</arg>
+<arg>timeout=10</arg>
+<arg>error=Could not find ${qax_btn_id} Element</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-22T20:02:12.405946" elapsed="0.091475"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-22T20:02:12.498284" level="INFO">Clicking element 'id=mi_button_cta'.</msg>
+<msg time="2025-01-22T20:02:12.579156" level="INFO">criteria is mi_button_cta</msg>
+<arg>${qax_btn_id}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-22T20:02:12.497518" elapsed="0.081743"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-22T20:02:13.723558" level="INFO">criteria is toolbarTitle
+criteria is toolbarTitle</msg>
+<arg>locator=${qax_title_id}</arg>
+<arg>timeout=10</arg>
+<arg>error=Could not find ${qax_title_id} Element</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-22T20:02:12.579460" elapsed="1.144305"/>
+</kw>
+<kw name="Element Text Should Be" owner="AppiumLibrary">
+<msg time="2025-01-22T20:02:13.725942" level="INFO">Verifying element 'id=toolbarTitle' contains exactly text 'Clique em Botões'.</msg>
+<msg time="2025-01-22T20:02:13.751200" level="INFO">criteria is toolbarTitle</msg>
+<arg>${qax_title_id}</arg>
+<arg>${QAX_TEXT_BUTTON}</arg>
+<arg>message=Could not find ${QAX_TEXT_BUTTON} Text</arg>
+<doc>Verifies element identified by ``locator`` exactly contains text ``expected``.</doc>
+<status status="PASS" start="2025-01-22T20:02:13.724131" elapsed="0.027163"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:02:12.405156" elapsed="1.346263"/>
+</kw>
+<kw name=" Click menu button and check informations" owner="actions">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>locator=${left_side_menu_acc_id}</arg>
+<arg>timeout=10</arg>
+<arg>error=Could not find ${left_side_menu_acc_id} element</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-22T20:02:13.752046" elapsed="0.023431"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-22T20:02:13.776366" level="INFO">Clicking element 'accessibility_id=Open navigation drawer'.</msg>
+<arg>${left_side_menu_acc_id}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-22T20:02:13.775581" elapsed="0.074914"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-22T20:02:14.754186" level="INFO">xpath criteria: //*[@resource-id="com.qaxperience.yodapp:id/rvNavigation"]//*[@text="Clique em Botões"]</msg>
+<arg>${click_button_menu_option_xpath}</arg>
+<arg>timeout=10</arg>
+<arg>error=Could not find ${click_button_menu_option_xpath} element</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-22T20:02:13.850705" elapsed="0.903597"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:02:13.751747" elapsed="1.002667"/>
+</kw>
+<kw name=" Check left menu option and check informations" owner="actions">
+<kw name="Click Text" owner="AppiumLibrary">
+<msg time="2025-01-22T20:02:14.869337" level="INFO">xpath criteria: //*[contains(@text,"Check e Radio")]</msg>
+<arg>${option_menu}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" start="2025-01-22T20:02:14.755779" elapsed="0.113657"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>text=${type_click}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2025-01-22T20:02:14.869638" elapsed="0.361801"/>
+</kw>
+<kw name="Click Text" owner="AppiumLibrary">
+<msg time="2025-01-22T20:02:15.896081" level="INFO">xpath criteria: //*[contains(@text,"Botões de radio")]</msg>
+<arg>text=${type_click}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" start="2025-01-22T20:02:15.231652" elapsed="0.664544"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>text=${type_button_text}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2025-01-22T20:02:15.896460" elapsed="1.318254"/>
+</kw>
+<arg>Check e Radio</arg>
+<arg>Botões de radio</arg>
+<arg>Botões de Radio</arg>
+<status status="PASS" start="2025-01-22T20:02:14.754969" elapsed="2.463469"/>
+</kw>
+<kw name="Click radio button option" owner="actions">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-22T20:02:17.224944" level="INFO">Clicking element 'xpath=//android.widget.RadioButton[contains(@text, "Javascript" )]'.</msg>
+<msg time="2025-01-22T20:02:17.345286" level="INFO">xpath criteria: //android.widget.RadioButton[contains(@text, "Javascript" )]</msg>
+<arg>xpath=//android.widget.RadioButton[contains(@text, "${tech}" )]</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-22T20:02:17.223632" elapsed="0.121762"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-22T20:02:19.347367" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-22T20:02:17.345645" elapsed="2.002018"/>
+</kw>
+<arg>Javascript</arg>
+<status status="PASS" start="2025-01-22T20:02:17.222858" elapsed="2.125074"/>
+</kw>
+<kw name="Close Session" owner="base">
+<kw name="Close Application" owner="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2025-01-22T20:02:19.349342" elapsed="0.322200"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:02:19.348604" elapsed="0.323188"/>
+</kw>
+<status status="PASS" start="2025-01-22T20:02:02.857154" elapsed="16.815013"/>
+</test>
+<status status="PASS" start="2025-01-22T20:02:02.848811" elapsed="16.823827"/>
+</suite>
+<status status="PASS" start="2025-01-22T20:01:05.179245" elapsed="74.493984"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Checkbox">Tests.Checkbox</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s2" name="Click">Tests.Click</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s3" name="Rabiobutton">Tests.Rabiobutton</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
